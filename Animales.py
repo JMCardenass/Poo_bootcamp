@@ -7,14 +7,40 @@ class Animales:
     def start_comer(self):
         self.is_comer = True
         print("El animal esta comiendo")
-    def hizo_popo(self):
+    def salio_corriendo(self):
         self.is_comer = False
-        print("El animal hizo popo")
+        print("El animal salio corriendo")
     def cumple_años(self):
-        self.edad = self.edad + 1
+        self.edad = int(self.edad) + 1
+
         print("El animal cumplio un año mas")
+    def habla(self):
+        pass
 mojito = Animales("conejo", "2", "blanco")  
 print(mojito.raza, mojito.edad, mojito.color)
 mojito.start_comer()
-mojito.hizo_popo()
+mojito.salio_corriendo()
 mojito.cumple_años()
+class Gato(Animales):
+    def __init__(self, raza , edad , color, nombre):
+        super().__init__(raza, edad, color)
+        self.nombre = nombre
+    def start_comer(self):
+        self.is_comer = True
+        print("El gato esta comiendo")
+    def salio_corriendo(self):
+        print("El gato salio corriendo")
+    def cumple_años(self):
+        self.edad = int(self.edad) + 1
+        print("El gato cumplio un año mas")
+    def habla(self):
+        return"miau"
+Romeo = Gato("persa", "3", "blanco", "Romeo")
+print(Romeo.raza, Romeo.edad, Romeo.color, Romeo.nombre)
+Romeo.start_comer() 
+Romeo.salio_corriendo()
+Romeo.cumple_años()
+print(Romeo.habla())
+
+    
+
